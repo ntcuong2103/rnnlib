@@ -99,8 +99,7 @@ template <typename T> struct ParamVal: public Val
 	}
 	bool load(istream& in, ostream& out = cout)
 	{
-		(in >> param);
-		return (in.rdstate() & std::ifstream::failbit);
+		return static_cast<bool> (in >> param);
 	}
 };
 
@@ -197,6 +196,8 @@ struct DataExporter: public Named
 				out << "loading "<< displayName << endl;
 			}
 			map<string, string>::iterator stringIt = conf.params.find(lookupName);
+			
+
 			if (stringIt == conf.params.end())
 			{
 				out << "WARNING: unable to find '" << displayName << "'" << endl;
