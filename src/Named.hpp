@@ -15,8 +15,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with RNNLIB.  If not, see <http://www.gnu.org/licenses/>.*/
 
-#ifndef _INCLUDED_NamedObject_h
-#define _INCLUDED_NamedObject_h
+#ifndef _INCLUDED_NamedObject_h  
+#define _INCLUDED_NamedObject_h  
 
 #include <string>
 #include <iostream>
@@ -24,18 +24,24 @@ along with RNNLIB.  If not, see <http://www.gnu.org/licenses/>.*/
 
 using namespace std;
 
-struct Named {
-  string name;
-  Named(const string & n): name(n) {}
-  virtual ~Named(){}
-  void print(ostream& out = cout) const {
-    out << "\"" << name << "\"";
-  }
+struct Named
+{
+	string name;
+	Named(const string & n):
+		name(n)
+	{}
+	virtual ~Named(){}
+	void print(ostream& out = cout) const
+	{
+		out << "\"" << name << "\"";
+	}
+	
 };
 
-static ostream& operator << (ostream& out, const Named& n) {
-  n.print(out);
-  return out;
+static ostream& operator << (ostream& out, const Named& n)
+{
+	n.print(out);
+	return out;
 }
 
 #endif

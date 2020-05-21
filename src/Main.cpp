@@ -19,7 +19,7 @@ along with RNNLIB.  If not, see <http://www.gnu.org/licenses/>.*/
 #include <boost/iostreams/stream.hpp>
 #include "MultilayerNet.hpp"
 #include "NetcdfDataset.hpp"
-//#include "GradientCheck.hpp"
+#include "GradientCheck.hpp"
 #include "WeightContainer.hpp"
 #include "SteepestDescent.hpp"
 #include "Rprop.hpp"
@@ -162,13 +162,13 @@ int main(int argc, char* argv[])
 	}
 	if (gradCheck)
  	{
-		//out << "data header:" << endl << header << endl;
-		//out << *testSeq; 
-		//prt_line(out);
- 	//	GradientCheck(out, net, *testSeq, conf.get<int>("sigFigs", 6), 
-		//	conf.get<real_t>("pert", 1e-5), conf.get<bool>("verbose", false), 
-		//	conf.get<bool>("breakOnError", true));
-		//conf.warn_unused(out);
+		out << "data header:" << endl << header << endl;
+		out << *testSeq; 
+		prt_line(out);
+ 		GradientCheck(out, net, *testSeq, conf.get<int>("sigFigs", 6), 
+			conf.get<real_t>("pert", 1e-5), conf.get<bool>("verbose", false), 
+			conf.get<bool>("breakOnError", true));
+		conf.warn_unused(out);
  	}
 	else if (jacobianCoords.size())
 	{
