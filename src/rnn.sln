@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rnn", "rnn.vcproj", "{AF41AB56-7E2C-4EA1-8779-BCDB6B03D745}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Recognizer_demo", "EngDemo\Recognizer_demo.vcproj", "{6EC52D9D-C5D8-434E-A9E9-3B872C2EFCD8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "recognizer_test", "recognizer_test\recognizer_test.vcproj", "{FAB18D20-2919-4248-92B7-1C0298F35B37}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rnnlib", "rnnlib\rnnlib.vcxproj", "{C867CBAC-0E69-4576-BFB3-5124395E6643}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF41AB56-7E2C-4EA1-8779-BCDB6B03D745}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AF41AB56-7E2C-4EA1-8779-BCDB6B03D745}.Debug|Win32.Build.0 = Debug|Win32
+		{AF41AB56-7E2C-4EA1-8779-BCDB6B03D745}.Release|Win32.ActiveCfg = Release|Win32
+		{AF41AB56-7E2C-4EA1-8779-BCDB6B03D745}.Release|Win32.Build.0 = Release|Win32
+		{6EC52D9D-C5D8-434E-A9E9-3B872C2EFCD8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6EC52D9D-C5D8-434E-A9E9-3B872C2EFCD8}.Debug|Win32.Build.0 = Debug|Win32
+		{6EC52D9D-C5D8-434E-A9E9-3B872C2EFCD8}.Release|Win32.ActiveCfg = Release|Win32
+		{6EC52D9D-C5D8-434E-A9E9-3B872C2EFCD8}.Release|Win32.Build.0 = Release|Win32
+		{FAB18D20-2919-4248-92B7-1C0298F35B37}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FAB18D20-2919-4248-92B7-1C0298F35B37}.Debug|Win32.Build.0 = Debug|Win32
+		{FAB18D20-2919-4248-92B7-1C0298F35B37}.Release|Win32.ActiveCfg = Release|Win32
+		{FAB18D20-2919-4248-92B7-1C0298F35B37}.Release|Win32.Build.0 = Release|Win32
+		{C867CBAC-0E69-4576-BFB3-5124395E6643}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C867CBAC-0E69-4576-BFB3-5124395E6643}.Debug|Win32.Build.0 = Debug|Win32
+		{C867CBAC-0E69-4576-BFB3-5124395E6643}.Release|Win32.ActiveCfg = Release|Win32
+		{C867CBAC-0E69-4576-BFB3-5124395E6643}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

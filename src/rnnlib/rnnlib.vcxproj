@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C867CBAC-0E69-4576-BFB3-5124395E6643}</ProjectGuid>
+    <RootNamespace>rnnlib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.24730.2</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>D:\library\netcdf-3.6.2\libsrc;D:\library\netcdf-3.6.2\cxx;C:\Program Files\boost\boost_1_47;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>netcdf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\library\netcdf-3.6.2\bin;C:\Program Files\boost\boost_1_47\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\boost\boost_1_59_0;..\netcdf-3.6.2\libsrc;..\netcdf-3.6.2\cxx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>netcdf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\netcdf-3.6.2\bin;C:\Program Files %28x86%29\boost\boost_1_59_0\lib32-msvc-14.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\DataExporter.cpp" />
+    <ClCompile Include="..\Main.cpp" />
+    <ClCompile Include="..\netcdf-3.6.2\cxx\ncvalues.cpp" />
+    <ClCompile Include="..\netcdf-3.6.2\cxx\netcdf.cpp" />
+    <ClCompile Include="..\Random.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ActivationFunctions.hpp" />
+    <ClInclude Include="..\BiasLayer.hpp" />
+    <ClInclude Include="..\BlockLayer.hpp" />
+    <ClInclude Include="..\ClassificationLayer.hpp" />
+    <ClInclude Include="..\CollapseLayer.hpp" />
+    <ClInclude Include="..\ConfigFile.hpp" />
+    <ClInclude Include="..\Connection.hpp" />
+    <ClInclude Include="..\Container.hpp" />
+    <ClInclude Include="..\CopyConnection.hpp" />
+    <ClInclude Include="..\DataExporter.hpp" />
+    <ClInclude Include="..\DataSequence.hpp" />
+    <ClInclude Include="..\DatasetErrors.hpp" />
+    <ClInclude Include="..\FullConnection.hpp" />
+    <ClInclude Include="..\GatherLayer.hpp" />
+    <ClInclude Include="..\GradientCheck.hpp" />
+    <ClInclude Include="..\Helpers.hpp" />
+    <ClInclude Include="..\IdentityLayer.hpp" />
+    <ClInclude Include="..\InputLayer.hpp" />
+    <ClInclude Include="..\Layer.hpp" />
+    <ClInclude Include="..\Log.hpp" />
+    <ClInclude Include="..\LstmLayer.hpp" />
+    <ClInclude Include="..\Matrix.hpp" />
+    <ClInclude Include="..\Mdrnn.hpp" />
+    <ClInclude Include="..\MultiArray.hpp" />
+    <ClInclude Include="..\MultilayerNet.hpp" />
+    <ClInclude Include="..\Named.hpp" />
+    <ClInclude Include="..\NetcdfDataset.hpp" />
+    <ClInclude Include="..\NetworkOutput.hpp" />
+    <ClInclude Include="..\NeuronLayer.hpp" />
+    <ClInclude Include="..\Optimiser.hpp" />
+    <ClInclude Include="..\Random.hpp" />
+    <ClInclude Include="..\Rprop.hpp" />
+    <ClInclude Include="..\SeqBuffer.hpp" />
+    <ClInclude Include="..\SoftmaxLayer.hpp" />
+    <ClInclude Include="..\SteepestDescent.hpp" />
+    <ClInclude Include="..\String.hpp" />
+    <ClInclude Include="..\StringAlignment.hpp" />
+    <ClInclude Include="..\Trainer.hpp" />
+    <ClInclude Include="..\TranscriptionLayer.hpp" />
+    <ClInclude Include="..\WeightContainer.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
