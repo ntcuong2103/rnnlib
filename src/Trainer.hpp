@@ -480,8 +480,10 @@ struct Trainer: public DataExporter
 				mdl_print_stats();
 			}
 
+			int progress = 0;
+
 			//run through one epoch, collecting errors and updating weights			
-			for (const DataSequence* seq = trainFiles.start(); seq; seq = trainFiles.next_sequence())
+			for (const DataSequence* seq = trainFiles.start(); seq; seq = trainFiles.next_sequence(), progress++)
 			{
 				if (verbose)
 				{
@@ -512,7 +514,9 @@ struct Trainer: public DataExporter
 					}
 					out << endl;
 				}
+				printf("\r%.2f%%", (double)progress * 100 / trainFiles.numSequences);
 			}
+			printf("\n");
 			if (batchLearn)
 			{
 				regularise(mdlWeight);
@@ -775,8 +779,9 @@ struct Trainer: public DataExporter
 	}
 	DatasetErrors& calculate_errors(DataList& data, DatasetErrors& errors)
 	{
+		int progress = 0;
 		errors.clear();
-		for (DataSequence* seq = data.start(); seq; seq = data.next_sequence())
+		for (DataSequence* seq = data.start(); seq; seq = data.next_sequence(), progress++)
 		{
 			if (verbose)
 			{					
@@ -793,7 +798,9 @@ struct Trainer: public DataExporter
 				out << "errors:" << endl;
 				out << netErrors << endl;
 			}
+			printf("\r%.2f%%", (double)progress * 100 / data.numSequences);
 		}
+		printf("\n");
 		errors.normalise();
 		return errors;
 	}
